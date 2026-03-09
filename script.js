@@ -45,9 +45,7 @@ themeToggle.addEventListener("click", () => {
   setTheme(getTheme() === "dark" ? "light" : "dark");
 });
 
-/* ════════════════════════════════
-   AUTH
-════════════════════════════════ */
+/*  AUTH */
 function doLogin() {
   const u = document.getElementById("username").value.trim();
   const p = document.getElementById("password").value.trim();
