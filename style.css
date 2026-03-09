@@ -348,6 +348,8 @@ body {
 .search-wrapper {
   display: flex;
   align-items: center;
+  justify-content: right;
+
   gap: 8px;
   flex: 1;
   min-width: 0;
@@ -355,6 +357,7 @@ body {
 
 .search-input {
   flex: 1;
+  max-width: 200px;
   min-width: 0;
   background: var(--bg-card);
   border: 1px solid var(--border);
@@ -472,14 +475,14 @@ body {
   color: var(--accent-red);
 }
 
-/* ── 7. MAIN CONTENT ── */
+/* Main Content */
 .main-content {
   padding: 24px 20px;
   max-width: 1400px;
   margin: 0 auto;
 }
 
-/* ── 8. TAB BAR ── */
+/* Tab Bar  */
 .tab-bar {
   display: flex;
   align-items: center;
@@ -585,7 +588,7 @@ body {
   font-weight: 600;
 }
 
-/* ── 9. CARDS GRID ── */
+/* Cards Grid */
 .cards-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -648,7 +651,7 @@ body {
   line-height: 1.4;
   display: -webkit-box;
   -webkit-line-clamp: 2;
-  -webkit-box-orient: vertical;
+  box-orient: vertical;
   overflow: hidden;
 }
 .card-description {
@@ -692,7 +695,7 @@ body {
   white-space: nowrap;
 }
 
-/* ── 10. BADGES ── */
+/* Badges */
 .badge {
   display: inline-flex;
   align-items: center;
@@ -734,7 +737,7 @@ body {
   border: 1px solid rgba(63, 185, 80, 0.2);
 }
 
-/* ── 11. AVATAR ── */
+/* Avatar*/
 .avatar-sm {
   width: 20px;
   height: 20px;
@@ -749,7 +752,7 @@ body {
   flex-shrink: 0;
 }
 
-/* ── 12. EMPTY STATE ── */
+/* Empty state */
 .empty-state {
   text-align: center;
   padding: 64px 20px;
@@ -766,7 +769,7 @@ body {
   font-size: 15px;
 }
 
-/* ── 13. MODALS ── */
+/* Modals */
 .modal-overlay {
   display: none;
   position: fixed;
@@ -949,7 +952,7 @@ body {
   color: var(--accent-red);
 }
 
-/* ── 14. RESPONSIVE ── */
+/* Responsive */
 
 /* Tablet: ≤ 1024px → 3 columns */
 @media (max-width: 1024px) {

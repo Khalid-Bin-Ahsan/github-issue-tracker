@@ -368,7 +368,7 @@ document.getElementById("ni-submit").addEventListener("click", () => {
   }
   document.getElementById("ni-error").style.display = "none";
 
-  // Add to local state (no write API available)
+  // Add to local state (no write API available ekhane)
   const newIssue = {
     id: Date.now(),
     title,
