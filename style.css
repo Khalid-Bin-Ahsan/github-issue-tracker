@@ -1,6 +1,39 @@
-* {
-  font-family: "Poppins", sans-serif;
+/* ──────────────────────────────────────────
+   GitHub Issue Tracker — style.css
+   Supplemental styles; main styles live in
+   the <style> block of index.html for easy
+   single-file deployment.
+─────────────────────────────────────────── */
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
 }
-.font-bangla {
-  font-family: "Hind Siliguri", sans-serif;
+::-webkit-scrollbar-track {
+  background: #161b22;
+}
+::-webkit-scrollbar-thumb {
+  background: #30363d;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #484f58;
+}
+
+/* Selection */
+::selection {
+  background: rgba(56, 139, 253, 0.25);
+  color: #e6edf3;
+}
+
+/* Focus visible */
+:focus-visible {
+  outline: 2px solid #388bfd;
+  outline-offset: 2px;
+}
+
+/* Smooth scroll */
+html {
+  scroll-behavior: smooth;
 }

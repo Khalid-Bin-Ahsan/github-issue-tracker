@@ -1,7 +1,7 @@
-echo "# khalid-s-english-janala" >> README.md
+echo "# github-issue-tracker" >> README.md
 git init
 git add README.md
 git commit -m "first commit"
 git branch -M main
-git remote add origin https://github.com/Khalid-Bin-Ahsan/khalid-s-english-janala.git
+git remote add origin https://github.com/Khalid-Bin-Ahsan/github-issue-tracker.git
 git push -u origin main
