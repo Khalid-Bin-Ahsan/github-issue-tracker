@@ -88,7 +88,7 @@ body {
   outline-offset: 2px;
 }
 
-/* ── 3. LOADING OVERLAY ── */
+/*  LOADING OVERLAY */
 .loading-overlay {
   display: none;
   position: fixed;
@@ -124,7 +124,7 @@ body {
   color: var(--text-secondary);
 }
 
-/* ── 4. LOGIN PAGE ── */
+/* LOGIN PAGE */
 #login-page {
   min-height: 100vh;
   display: flex;
@@ -305,13 +305,13 @@ body {
   display: none;
 }
 
-/* ── 5. MAIN PAGE ── */
+/* MAIN PAGE */
 #main-page {
   display: none;
   min-height: 100vh;
 }
 
-/* ── 6. NAVBAR ── */
+/*  NAVBAR */
 .navbar {
   background: var(--bg-secondary);
   border-bottom: 1px solid var(--border);

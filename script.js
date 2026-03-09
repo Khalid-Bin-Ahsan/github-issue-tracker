@@ -77,9 +77,9 @@ document.getElementById("logout-btn").addEventListener("click", () => {
   currentTab = "all";
 });
 
-/* ════════════════════════════════
+/* 
    LOADING SPINNER
-════════════════════════════════ */
+*/
 function showLoading() {
   loadingOverlay.classList.add("active");
 }
@@ -87,9 +87,9 @@ function hideLoading() {
   loadingOverlay.classList.remove("active");
 }
 
-/* ════════════════════════════════
+/* 
    API — FETCH ALL ISSUES
-════════════════════════════════ */
+ */
 async function loadIssues() {
   showLoading();
   try {
@@ -105,9 +105,9 @@ async function loadIssues() {
   hideLoading();
 }
 
-/* ════════════════════════════════
+/* 
    API — SEARCH
-════════════════════════════════ */
+ */
 async function doSearch(q) {
   if (!q.trim()) {
     renderCards(filtered());
@@ -138,9 +138,9 @@ document.getElementById("search-input").addEventListener("keydown", (e) => {
     doSearch(document.getElementById("search-input").value);
 });
 
-/* ════════════════════════════════
+/* 
    TABS
-════════════════════════════════ */
+ */
 document.querySelectorAll(".tab-btn").forEach((btn) => {
   btn.addEventListener("click", () => {
     document
@@ -174,9 +174,9 @@ function updateCounts() {
   closedCountLbl.textContent = `${closed} Closed`;
 }
 
-/* ════════════════════════════════
+/* 
    RENDER CARDS
-════════════════════════════════ */
+ */
 function renderCards(issues) {
   cardsGrid.innerHTML = "";
 
@@ -238,9 +238,9 @@ function renderCards(issues) {
   });
 }
 
-/* ════════════════════════════════
+/* 
    ISSUE DETAIL MODAL
-════════════════════════════════ */
+ */
 async function openDetailModal(issue) {
   let full = issue;
   const id = issue.id || issue.number;
@@ -337,9 +337,9 @@ modalOverlay.addEventListener("click", (e) => {
   if (e.target === modalOverlay) modalOverlay.classList.remove("active");
 });
 
-/* ════════════════════════════════
+/* 
    NEW ISSUE MODAL
-════════════════════════════════ */
+ */
 document.getElementById("new-issue-btn").addEventListener("click", () => {
   document.getElementById("ni-title").value = "";
   document.getElementById("ni-desc").value = "";
@@ -386,9 +386,9 @@ document.getElementById("ni-submit").addEventListener("click", () => {
   newIssueOverlay.classList.remove("active");
 });
 
-/* ════════════════════════════════
+/* 
    KEYBOARD GLOBAL
-════════════════════════════════ */
+ */
 document.addEventListener("keydown", (e) => {
   if (e.key === "Escape") {
     modalOverlay.classList.remove("active");
@@ -396,9 +396,9 @@ document.addEventListener("keydown", (e) => {
   }
 });
 
-/* ════════════════════════════════
+/* 
    HELPERS
-════════════════════════════════ */
+*/
 function escHtml(str) {
   return String(str)
     .replace(/&/g, "&amp;")
