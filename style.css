@@ -578,7 +578,7 @@ body {
 .tab-btn.active-open {
   background: var(--accent-green);
   border-color: var(--accent-green);
-  color: #0d1117;
+  color: #fff;
   font-weight: 600;
 }
 .tab-btn.active-closed {
