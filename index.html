@@ -1,230 +1,258 @@
 <!doctype html>
 <html lang="en" data-theme="light">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>GitHub Issue Tracker</title>
+    <link
+      rel="shortcut icon"
+      href="https://github.githubassets.com/favicons/favicon.svg"
+      type="image/svg+xml"
+    />
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>GitHub Issue Tracker</title>
-  <link rel="shortcut icon" href="https://github.githubassets.com/favicons/favicon.svg" type="image/svg+xml" />
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+      crossorigin="anonymous"
+    />
 
-  <!-- Font Awesome -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
-    crossorigin="anonymous" />
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Sora:wght@300;400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
 
-  <!-- Google Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link
-    href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Sora:wght@300;400;500;600;700;800&display=swap"
-    rel="stylesheet" />
+    <!-- DaisyUI (must come before Tailwind) -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/daisyui@5"
+      rel="stylesheet"
+      type="text/css"
+    />
 
-  <!-- DaisyUI (must come before Tailwind) -->
-  <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
+    <!-- Tailwind CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 
-  <!-- Tailwind CDN -->
-  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css" />
+  </head>
 
-  <!-- Custom CSS -->
-  <link rel="stylesheet" href="style.css" />
-</head>
-
-<body>
-  <!-- ═══ LOADING OVERLAY ═══ -->
-  <div id="loading-overlay" class="loading-overlay">
-    <div class="spinner"></div>
-    <span class="loading-text">Fetching issues…</span>
-  </div>
-
-  <!-- ═══════════ LOGIN PAGE ═══════════ -->
-  <div id="login-page">
-    <div class="login-card">
-      <div class="login-logo">
-
-        <span class="h-[100px] w-[100px]">
-          <img src="assets/github-logo.png" alt="">
-        </span>
-        
-      </div>
-
-     <h2 class="items-center text-center font-semibold text-xl">
-      GitHub Issue Tracker
-     </h2>
-      <p class="login-subtitle">
-        Sign in to access your GitHub issues
-      </p>
-
-      <div class="error-msg" id="login-error">
-        <i class="fa-solid fa-circle-exclamation"></i> Invalid username or
-        password.
-      </div>
-
-      <div class="form-group">
-        <label for="username">Username</label>
-        <input type="text" id="username" placeholder="Enter username" autocomplete="username" />
-      </div>
-      <div class="form-group">
-        <label for="password">Password</label>
-        <input type="password" id="password" placeholder="Enter password" autocomplete="current-password" />
-      </div>
-
-      <button class="btn-signin" id="signin-btn">
-        <i class="fa-solid fa-right-to-bracket"></i> Sign In
-      </button>
-
-      <div class="demo-cred">
-        <div class="demo-cred-title">Demo Credentials</div>
-        Username: <strong>admin</strong> <br> Password:
-        <strong>admin123</strong>
-      </div>
+  <body>
+    <!-- ═══ LOADING OVERLAY ═══ -->
+    <div id="loading-overlay" class="loading-overlay">
+      <div class="spinner"></div>
+      <span class="loading-text">Fetching issues…</span>
     </div>
-  </div>
 
-
-  <!--Main Page -->
-  <div id="main-page">
-    <!-- Navbar -->
-    <nav class="navbar">
-      <a href="#" class="navbar-brand">
-
-        <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38
-              0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13
-              -.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66
-              .07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15
-              -.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0
-              1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82
-              1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01
-              1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z" />
-        </svg> -->
-        <span class="brand-text">IssueTracker</span>
-      </a>
-
-      <!-- Search + New Issue -->
-      <div class="search-wrapper">
-        <input class="search-input" type="text" id="search-input" placeholder="Search issues…" />
-        <button class="btn-search" id="search-btn">
-          <i class="fa-solid fa-magnifying-glass"></i>
-          <span class="btn-label">Search</span>
-        </button>
-        <button class="btn-new-issue" id="new-issue-btn">
-          <i class="fa-solid fa-plus"></i>
-          <span class="btn-label">New Issue</span>
-        </button>
-      </div>
-
-      <!-- Right actions -->
-      <div class="navbar-actions">
-        <button class="btn-icon" id="theme-toggle" title="Toggle light/dark theme">
-          <i class="fa-solid fa-moon" id="theme-icon"></i>
-        </button>
-        <button class="btn-logout" id="logout-btn">
-          <i class="fa-solid fa-arrow-right-from-bracket"></i>
-          <span class="btn-label">Logout</span>
-        </button>
-      </div>
-    </nav>
-
-    <!-- Content -->
-    <div class="main-content">
-      <!-- Tab Bar -->
-      <div class="tab-bar">
-        <div class="tab-left">
-          <div class="issue-count-badge">
-            <i class="fa-solid fa-circle-dot"></i>
-            <span class="count-num" id="issue-count">0</span>
-            <span>issues</span>
-          </div>
-          <div class="status-indicators">
-            <div class="status-pill">
-              <span class="dot dot-open"></span>
-              <span id="open-count-label">Open</span>
-            </div>
-            <div class="status-pill">
-              <span class="dot dot-closed"></span>
-              <span id="closed-count-label">Closed</span>
-            </div>
-          </div>
+    <!-- ═══════════ LOGIN PAGE ═══════════ -->
+    <div id="login-page">
+      <div class="login-card">
+        <div class="login-logo">
+          <span class="h-[100px] w-[100px]">
+            <img src="assets/github-logo.png" alt="" />
+          </span>
         </div>
-        <div class="tab-right">
-          <button class="tab-btn active-all" data-tab="all">All</button>
-          <button class="tab-btn" data-tab="open">Open</button>
-          <button class="tab-btn" data-tab="closed">Closed</button>
+
+        <h2 class="items-center text-center font-semibold text-xl">
+          GitHub Issue Tracker
+        </h2>
+        <p class="login-subtitle">Sign in to access your GitHub issues</p>
+
+        <div class="error-msg" id="login-error">
+          <i class="fa-solid fa-circle-exclamation"></i> Invalid username or
+          password.
         </div>
-      </div>
 
-      <!-- Cards -->
-      <div class="cards-grid" id="cards-grid"></div>
-
-      <!-- Empty State -->
-      <div class="empty-state" id="empty-state">
-        <i class="fa-solid fa-circle-exclamation"></i>
-        <p>No issues found.</p>
-      </div>
-    </div>
-  </div>
-
-
-  <!-- Detail Modal-->
-  <div class="modal-overlay" id="modal-overlay">
-    <div class="modal-box">
-      <div class="modal-top-border" id="modal-top-border"></div>
-      <div class="modal-header">
-        <div class="modal-title" id="modal-title"></div>
-        <button class="btn-close" id="modal-close">
-          <i class="fa-solid fa-xmark"></i>
-        </button>
-      </div>
-      <div class="modal-body">
-        <div class="modal-desc" id="modal-desc"></div>
-        <div class="modal-meta-grid" id="modal-meta"></div>
-      </div>
-    </div>
-  </div>
-
-  <!-- MODAL  -->
-  <div class="modal-overlay" id="new-issue-overlay">
-    <div class="modal-box new-issue-modal">
-      <div class="modal-top-border open"></div>
-      <div class="modal-header">
-        <div class="modal-title">Create New Issue</div>
-        <button class="btn-close" id="new-issue-close">
-          <i class="fa-solid fa-xmark"></i>
-        </button>
-      </div>
-      <div class="modal-body">
         <div class="form-group">
-          <label for="ni-title">Title <span class="required-star">*</span></label>
-          <input type="text" id="ni-title" placeholder="Issue title…" />
+          <label for="username">Username</label>
+          <input
+            type="text"
+            id="username"
+            placeholder="Enter username"
+            autocomplete="username"
+          />
         </div>
         <div class="form-group">
-          <label for="ni-desc">Description</label>
-          <textarea id="ni-desc" rows="4" placeholder="Describe the issue…" class="ni-textarea"></textarea>
+          <label for="password">Password</label>
+          <input
+            type="password"
+            id="password"
+            placeholder="Enter password"
+            autocomplete="current-password"
+          />
         </div>
-        <div class="ni-two-col">
-          <div class="form-group">
-            <label for="ni-priority">Priority</label>
-            <select id="ni-priority" class="ni-select">
-              <option value="low">Low</option>
-              <option value="medium" selected>Medium</option>
-              <option value="high">High</option>
-            </select>
-          </div>
-          <div class="form-group">
-            <label for="ni-label">Label</label>
-            <input type="text" id="ni-label" placeholder="e.g. bug, feature…" />
-          </div>
-        </div>
-        <div id="ni-error" class="ni-error-msg">
-          <i class="fa-solid fa-circle-exclamation"></i> Title is required.
-        </div>
-        <button class="btn-signin" id="ni-submit">
-          <i class="fa-solid fa-plus"></i> Create Issue
+
+        <button class="btn-signin" id="signin-btn">
+          <i class="fa-solid fa-right-to-bracket"></i> Sign In
         </button>
+
+        <div class="demo-cred">
+          <div class="demo-cred-title">Demo Credentials</div>
+          Username: <strong>admin</strong> <br />
+          Password:
+          <strong>admin123</strong>
+        </div>
       </div>
     </div>
-  </div>
 
-  <!--Script -->
-  <script src="script.js"></script>
-</body>
+    <!--Main Page -->
+    <div id="main-page">
+      <!-- Navbar -->
+      <nav class="navbar">
+        <a href="#" class="navbar-brand">
+          <span class="h-[37px] w-[36px]">
+            <img src="assets/github-logo.png" alt="" />
+          </span>
+          <span class="brand-text">IssueTracker</span>
+        </a>
 
+        <!-- Search + New Issue -->
+        <div class="search-wrapper">
+          <input
+            class="search-input"
+            type="text"
+            id="search-input"
+            placeholder="Search issues…"
+          />
+          <button class="btn-search" id="search-btn">
+            <i class="fa-solid fa-magnifying-glass"></i>
+            <span class="btn-label">Search</span>
+          </button>
+          <button class="btn-new-issue" id="new-issue-btn">
+            <i class="fa-solid fa-plus"></i>
+            <span class="btn-label">New Issue</span>
+          </button>
+        </div>
+
+        <!-- Right actions -->
+        <div class="navbar-actions">
+          <button
+            class="btn-icon"
+            id="theme-toggle"
+            title="Toggle light/dark theme"
+          >
+            <i class="fa-solid fa-moon" id="theme-icon"></i>
+          </button>
+          <button class="btn-logout" id="logout-btn">
+            <i class="fa-solid fa-arrow-right-from-bracket"></i>
+            <span class="btn-label">Logout</span>
+          </button>
+        </div>
+      </nav>
+
+      <!-- Content -->
+      <div class="main-content">
+        <!-- Tab Bar -->
+        <div class="tab-bar">
+          <div class="tab-left">
+            <div class="issue-count-badge">
+              <i class="fa-solid fa-circle-dot"></i>
+              <span class="count-num" id="issue-count">0</span>
+              <span>issues</span>
+            </div>
+            <div class="status-indicators">
+              <div class="status-pill">
+                <span class="dot dot-open"></span>
+                <span id="open-count-label">Open</span>
+              </div>
+              <div class="status-pill">
+                <span class="dot dot-closed"></span>
+                <span id="closed-count-label">Closed</span>
+              </div>
+            </div>
+          </div>
+          <div class="tab-right">
+            <button class="tab-btn active-all" data-tab="all">All</button>
+            <button class="tab-btn" data-tab="open">Open</button>
+            <button class="tab-btn" data-tab="closed">Closed</button>
+          </div>
+        </div>
+
+        <!-- Cards -->
+        <div class="cards-grid" id="cards-grid"></div>
+
+        <!-- Empty State -->
+        <div class="empty-state" id="empty-state">
+          <i class="fa-solid fa-circle-exclamation"></i>
+          <p>No issues found.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Detail Modal-->
+    <div class="modal-overlay" id="modal-overlay">
+      <div class="modal-box">
+        <div class="modal-top-border" id="modal-top-border"></div>
+        <div class="modal-header">
+          <div class="modal-title" id="modal-title"></div>
+          <button class="btn-close" id="modal-close">
+            <i class="fa-solid fa-xmark"></i>
+          </button>
+        </div>
+        <div class="modal-body">
+          <div class="modal-desc" id="modal-desc"></div>
+          <div class="modal-meta-grid" id="modal-meta"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- MODAL  -->
+    <div class="modal-overlay" id="new-issue-overlay">
+      <div class="modal-box new-issue-modal">
+        <div class="modal-top-border open"></div>
+        <div class="modal-header">
+          <div class="modal-title">Create New Issue</div>
+          <button class="btn-close" id="new-issue-close">
+            <i class="fa-solid fa-xmark"></i>
+          </button>
+        </div>
+        <div class="modal-body">
+          <div class="form-group">
+            <label for="ni-title"
+              >Title <span class="required-star">*</span></label
+            >
+            <input type="text" id="ni-title" placeholder="Issue title…" />
+          </div>
+          <div class="form-group">
+            <label for="ni-desc">Description</label>
+            <textarea
+              id="ni-desc"
+              rows="4"
+              placeholder="Describe the issue…"
+              class="ni-textarea"
+            ></textarea>
+          </div>
+          <div class="ni-two-col">
+            <div class="form-group">
+              <label for="ni-priority">Priority</label>
+              <select id="ni-priority" class="ni-select">
+                <option value="low">Low</option>
+                <option value="medium" selected>Medium</option>
+                <option value="high">High</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="ni-label">Label</label>
+              <input
+                type="text"
+                id="ni-label"
+                placeholder="e.g. bug, feature…"
+              />
+            </div>
+          </div>
+          <div id="ni-error" class="ni-error-msg">
+            <i class="fa-solid fa-circle-exclamation"></i> Title is required.
+          </div>
+          <button class="btn-signin" id="ni-submit">
+            <i class="fa-solid fa-plus"></i> Create Issue
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!--Script -->
+    <script src="script.js"></script>
+  </body>
 </html>
