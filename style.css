@@ -996,7 +996,8 @@ body {
   }
 
   .brand-text {
-    display: none;
+    font-size: small;
+    word-wrap: break-word;
   }
 
   .tab-bar {
